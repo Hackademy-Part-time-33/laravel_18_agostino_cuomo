@@ -4,6 +4,7 @@ namespace App\Livewire\Page;
 
 use Livewire\Component;
 use Livewire\Attributes\Validate;
+use App\Models\Article;
 
 
 class Modifica extends Component
@@ -16,10 +17,11 @@ class Modifica extends Component
    #[Validate('required|string')]
    public $gender; 
 
-   public $article;
+   public Article $article;
 
    public function mount()
     {
+       
         $this->name = $this->article->name;
         $this->gender = $this->article->gender;
        
